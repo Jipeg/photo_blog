@@ -1,0 +1,34 @@
+a.underline {
+    padding: 15px 0;
+}
+  
+a.underline:hover, a.highlighted{
+  background-color: #dfdfdf;
+  transition: .2s;
+}
+
+@media (min-width: 950px) {
+  a.underline {
+    border-radius: 0;
+    position: relative;
+  }
+  
+  a.underline:hover, a.highlighted {
+    background-color: unset;
+  }
+  a.underline:after {
+    content: "";
+    height: 2px;
+    width: 0%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #225384; /*цвет фона элемента*/
+    transition: width 0.2s ease-in-out; /*данное свойство отвечает за плавное изменение ширины. Здесь можно задать время анимации в секундах (в данном случае задано 0.4 секунды)*/
+  }
+  a.highlighted:after,
+  a.underline:hover:after,
+  a.underline:focus:after {
+    width: 100%;
+  }
+}
