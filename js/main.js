@@ -1,4 +1,12 @@
+setInterval(() => {
+    try {
+    document.getElementsByClassName("mfp-counter")[0].innerText=document.getElementsByClassName("mfp-counter")[0].innerText.replace("of","из")
+    } catch {}
+    }, 5);
 let mySwiper;
+let isPC=false;
+let isMobile=false;
+
 // closeSlider();
 mobAndPC();
 
@@ -9,7 +17,7 @@ function closeWithEsc(e) {
     // console.log('qweqwe')
     if (e.which == 27) {
         e.preventDefault();
-        closeSlider();
+        closeSlider(); 
     }
 }
 
@@ -60,7 +68,7 @@ function swiperOn(e){
     mySwiper = new Swiper(".mySwiper", {
     pagination: {
         el: ".swiper-pagination",
-        type: "fraction",
+        
     },
     initialSlide: e.target.getAttribute('alt')-1,
     navigation: {
@@ -71,14 +79,36 @@ function swiperOn(e){
     //e.preventDefault();
 };
 
+function hideNavAndBg() {
+    $("nav").hide();
+    $("body").css("background-color", "rgba(0,0,0,0.90)");
+}
+
+function showNavAndBg() {
+    $("nav").show();
+    $("body").css("background-color", "#fff");
+    $(".gallery-item").on("click", hideNavAndBg);
+    
+}
+
 function mobAndPC(){
-    if (window.matchMedia("(max-width: 991px)").matches) {
+        if (window.matchMedia("(max-width: 991px)").matches) {
+        if (isPC) {window.location.reload();}
+        isMobile=true;
         // мобильная версия слайдера
         //console.log('small');
+        
+        var qwe = $(".gallery-list > a");
+        qwe.removeAttr("href");
+
         $(".gallery-item").off("click", swiperOn);
         $(".close-slider").off("click", closeSlider);
         $(".close-slider").on("click", closeSlider);
         $(".gallery-item").on("click", swiperOn);
+        $(".gallery-item").off("click", hideNavAndBg);
+        $(".close-slider").off("click", showNavAndBg);
+        $(".gallery-item").on("click", hideNavAndBg);
+        $(".close-slider").on("click", showNavAndBg);
         // $(document).keyup(closeWithEsc);
         //querySelectorAll(".gallery-item")
 
@@ -88,7 +118,8 @@ function mobAndPC(){
         // }
     } else {
         // Пк версия
-
+        if (isMobile) {window.location.reload();}
+        isPC=true;
         if (mySwiper != undefined && !mySwiper.destroyed) closeSlider(); // закроем на всякий!
 
         $(".close-slider").off("click", closeSlider);
