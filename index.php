@@ -61,10 +61,10 @@
   </div>
 </div>
 <div class="logo">
-  <a class="underline" href="#openModal">Запись на съёмку</a>
+  <a class="underline" href="#openModal">Хочу с вами!</a>
 </div>
 
-<h2 class="title">Gallery of photographer Andriana Kuznetsova</h2> 
+<h2 class="title">Тусовки Pushkin's Gangsters</h2> 
 <nav>
   <ul>
     <?php
