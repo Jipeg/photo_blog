@@ -25,7 +25,10 @@
     position: relative;
     width: auto;
     margin: 10px;
-    top: 300px;
+    /* отображение модального окна по центру по вертикали */
+    display: block;
+    /* отображение модального окна по центру по горизонтали */
+    margin: 0 auto;
   }
   @media (min-width: 576px) {
   .modal-dialog {
@@ -112,3 +115,85 @@
     overflow: auto;
   }
   
+.modal-body form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  /* style like bootstrap form */
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+
+}
+
+button {
+  /* style like bootstrap button */
+  padding: 10px 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 10px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+input {
+  /* style like bootstrap input */
+  padding: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+  max-width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);  
+}
+
+option, select {
+  /* style like bootstrap option */
+  padding: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+  max-width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}

@@ -30,16 +30,33 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title">Заголовок</h3>
+        <h3 class="modal-title">Хочу с вами!</h3>
         <a href="#close" title="Close" class="close">×</a>
       </div>
       <div class="modal-body">    
-        <ul>
-      <li>Содержание</li>
-      <li>Содержание</li>
-      <li>Содержание</li>
-      <li>Содержание</li>
-    </ul>
+        <form action="/server/zayavka.php" method="post">
+          <label for="fio">ФИО</label>
+          <input type="text" name="fio" required>
+
+          <label for="tg">TelegramID</label>
+          <input type="text" name="tg" required>
+
+          <label for="age">Возраст</label>
+          <input type="number" name="age" required>
+
+          <label for="pic">Фото</label>
+          <input type="file" name="pic" required>
+
+          <label for="tusa">Выбери тусу</label>
+          <select id="tusa" name="tusa">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+          </select>
+
+          <button type="submit">Отправить</button>
+        </form>
       </div>
     </div>
   </div>
