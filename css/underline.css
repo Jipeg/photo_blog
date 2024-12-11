@@ -1,8 +1,10 @@
 a.underline {
-    padding: 15px 0;
+  padding: 25px 0;
 }
-  
-a.underline:hover, a.highlighted{
+a.highlighted {
+  background-color: #dfdfdf;  
+}
+a.underline:hover {
   background-color: #dfdfdf;
   transition: .2s;
 }
@@ -12,23 +14,28 @@ a.underline:hover, a.highlighted{
     border-radius: 0;
     position: relative;
   }
-  
-  a.underline:hover, a.highlighted {
+  a.highlighted {
+    background-color: #ffffff;  
+    
+  }
+  a.underline:hover {
     background-color: unset;
   }
   a.underline:after {
     content: "";
-    height: 2px;
-    width: 0%;
     position: absolute;
-    left: 0;
+    height: 2px;
+    background-color: #f69ec4;
+    width: 0;
+    left: 50%;
     bottom: 0;
-    background-color: #225384; /*цвет фона элемента*/
-    transition: width 0.2s ease-in-out; /*данное свойство отвечает за плавное изменение ширины. Здесь можно задать время анимации в секундах (в данном случае задано 0.4 секунды)*/
+    transform: translateX(-50%);
+    transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
   }
   a.highlighted:after,
   a.underline:hover:after,
   a.underline:focus:after {
     width: 100%;
   }
+  a:hover { color: #f69ec4; }
 }

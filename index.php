@@ -15,14 +15,13 @@
   <!-- <link rel="shortcut icon" href="#" /> -->
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/underline.css">
   <link rel="stylesheet" href="css/modal.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/slider.css">
-
 </head>
 
 <body>
@@ -82,12 +81,12 @@
 </nav>
 
 <section class="gallery">
-  <a class="close-slider underline">Закрыть</a>
+  <a class="close-slider underline">✕</a>
   <div class="gallery-list">
   <?php
     for ($i = 1; $i <= $imgset_count[$imgset]; $i++) { 
       echo("
-      <a href='img$imgset/$i.jpg' target='black' class='gallery-item'>
+      <a href='img$imgset/$i.jpg' target='_blank' class='gallery-item'>
         <div class='gallery-item-hover' alt='$i'>Посмотреть</div>
         <img src='img$imgset/$i.jpg'>
       </a>
@@ -95,9 +94,9 @@
     }
   ?>
   </div>
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-  <!-- <div class="swiper-pagination"></div> -->
+ <!-- <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div> --> 
+  <div class="swiper-pagination"></div> 
 </section>
 
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>

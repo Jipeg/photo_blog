@@ -1,18 +1,25 @@
 .modal {
-    position: fixed; /* фиксированное положение */
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0,0,0,0.75); /* фон */
-    z-index: 1050;
-    opacity: 0; /* по умолчанию модальное окно прозрачно */
-    -webkit-transition: opacity 200ms ease-in; 
-    -moz-transition: opacity 200ms ease-in;
-    transition: opacity 200ms ease-in; /* анимация перехода */
-    pointer-events: none; /* элемент невидим для событий мыши */
-    margin: 0;
-    padding: 0;
+  position: fixed; /* фиксированное положение */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100% ;
+  height: 100vh;
+  /* height: 225%; */
+  background-color:rgba(0,0,0,0.85);; /* фон */
+  z-index: 1050;
+  opacity: 0; /* по умолчанию модальное окно прозрачно */
+  -webkit-transition: opacity 200ms ease-in; 
+  -moz-transition: opacity 200ms ease-in;
+  transition: opacity 200ms ease-in; /* анимация перехода */
+  pointer-events: none; /* элемент невидим для событий мыши */
+  margin: 0;
+  padding: 0;
+   
+  }
+  ul {
+    list-style-type: none;
   }
   /* При отображении модального окно */
   .modal:target {
@@ -25,10 +32,7 @@
     position: relative;
     width: auto;
     margin: 10px;
-    /* отображение модального окна по центру по вертикали */
-    display: block;
-    /* отображение модального окна по центру по горизонтали */
-    margin: 0 auto;
+    top: 200px;
   }
   @media (min-width: 576px) {
   .modal-dialog {
@@ -38,6 +42,7 @@
   }
   /* Стили для блока с контентом окна */ 
   .modal-content {
+    
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
@@ -48,10 +53,11 @@
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+    text-align: center;
     background-color: #fff;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.2);
+    border: 1px solid rgba(0, 0, 0, .5);
     border-radius: .3rem;
     outline: 0;
   }
@@ -59,6 +65,14 @@
   .modal-content {
       -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
       box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    }
+    /* .modal {
+      height: 220vh;
+    } */
+  @media (min-width: 991px) {
+    /* .modal {
+      height: 181vh;
+    } */
   }
   }
   /* Стили заголовка окна */
@@ -87,9 +101,9 @@
   }
   /* Стили кнопки "х" ("Закрыть")  */
   .close {
-    float: right;
+   
     font-family: sans-serif;
-    font-size: 24px;
+    font-size: 40px;
     font-weight: 700;
     line-height: 1;
     color: #000;
@@ -106,12 +120,13 @@
   }
   /* Стили блока основного содержимого окна */
   .modal-body {
-  position: relative;
+    font-size: 20px;
+    position: relative;
     -webkit-box-flex: 1;
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
-    padding: 40px;
+    padding: 34px;
     overflow: auto;
   }
   
@@ -196,4 +211,28 @@ option, select {
   box-sizing: border-box;
   transition: all 0.3s ease;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
+}  @media (max-width: 530px) {
+  @media (max-width: 530px) {
+    .modal-content {
+      font-size: 15px;
+    }
+    .modal-body {
+      font-size: 15px;
+    }
+    .modal {
+      height: 141%;
+    }
+    
+  }
+  @media (max-width: 481px) {
+    .close {
+      margin-top: -25px;
+      margin-right: -9px;
+  }
+  @media (max-width: 991px){  
+    /* .modal {
+      height: 745vh;
+    } */
+    
+  }
+  }
